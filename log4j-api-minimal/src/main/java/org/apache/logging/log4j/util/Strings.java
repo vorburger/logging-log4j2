@@ -22,7 +22,7 @@ import java.util.Objects;
 
 /**
  * <em>Consider this class private.</em>
- * 
+ *
  * @see <a href="http://commons.apache.org/proper/commons-lang/">Apache Commons Lang</a>
  */
 public final class Strings {
@@ -33,35 +33,29 @@ public final class Strings {
      * The empty string.
      */
     public static final String EMPTY = "";
-    
+
     /**
      * The empty array.
      */
     public static final String[] EMPTY_ARRAY = {};
-    
-    /**
-     * OS-dependent line separator, defaults to {@code "\n"} if the system property {@code ""line.separator"} cannot be
-     * read.
-     */
-    public static final String LINE_SEPARATOR = PropertiesUtil.getProperties().getStringProperty("line.separator",
-            "\n");
 
     /**
      * Returns a double quoted string.
-     * 
+     *
      * @param str a String
      * @return {@code "str"}
      */
     public static String dquote(final String str) {
         return Chars.DQUOTE + str + Chars.DQUOTE;
     }
-    
+
     /**
      * Checks if a String is blank. A blank string is one that is either
      * {@code null}, empty, or all characters are {@link Character#isWhitespace(char)}.
      *
      * @param s the String to check, may be {@code null}
-     * @return {@code true} if the String is {@code null}, empty, or or all characters are {@link Character#isWhitespace(char)}
+     * @return {@code true} if the String is {@code null}, empty, or or all characters are
+     *             {@link Character#isWhitespace(char)}
      */
     public static boolean isBlank(final String s) {
         if (s == null || s.isEmpty()) {
@@ -147,7 +141,7 @@ public final class Strings {
      * strings within the iteration are represented by empty strings.</p>
      *
      * @param iterable  the {@code Iterable} providing the values to join together, may be null
-     * @param separator  the separator character to use
+     * @param separator the separator character to use
      * @return the joined String, {@code null} if null iterator input
      */
     public static String join(final Iterable<?> iterable, final char separator) {
@@ -165,7 +159,7 @@ public final class Strings {
      * strings within the iteration are represented by empty strings.</p>
      *
      * @param iterator  the {@code Iterator} of values to join together, may be null
-     * @param separator  the separator character to use
+     * @param separator the separator character to use
      * @return the joined String, {@code null} if null iterator input
      */
     public static String join(final Iterator<?> iterator, final char separator) {
@@ -218,9 +212,9 @@ public final class Strings {
      * <p>
      * Copied from Apache Commons Lang org.apache.commons.lang3.StringUtils.
      * </p>
-     * 
-     * @param str  the String to get the leftmost characters from, may be null
-     * @param len  the length of the required String
+     *
+     * @param str the String to get the leftmost characters from, may be null
+     * @param len the length of the required String
      * @return the leftmost characters, {@code null} if null String input
      */
     public static String left(final String str, final int len) {
@@ -238,14 +232,14 @@ public final class Strings {
 
     /**
      * Returns a quoted string.
-     * 
+     *
      * @param str a String
      * @return {@code 'str'}
      */
     public static String quote(final String str) {
         return Chars.QUOTE + str + Chars.QUOTE;
     }
-    
+
     /**
      * <p>
      * Removes control characters (char &lt;= 32) from both ends of this String returning {@code null} if the String is
@@ -281,6 +275,7 @@ public final class Strings {
 
     /**
      * Shorthand for {@code str.toUpperCase(Locale.ROOT);}
+     *
      * @param str The string to upper case.
      * @return a new string
      * @see String#toLowerCase(Locale)
@@ -291,6 +286,7 @@ public final class Strings {
 
     /**
      * Concatenates 2 Strings without allocation.
+     *
      * @param str1 the first string.
      * @param str2 the second string.
      * @return the concatenated String.
@@ -298,7 +294,8 @@ public final class Strings {
     public static String concat(String str1, String str2) {
         if (isEmpty(str1)) {
             return str2;
-        } else if (isEmpty(str2)) {
+        }
+        if (isEmpty(str2)) {
             return str1;
         }
         StringBuilder sb = tempStr.get();
@@ -311,7 +308,8 @@ public final class Strings {
 
     /**
      * Creates a new string repeating given {@code str} {@code count} times.
-     * @param str input string
+     *
+     * @param str   input string
      * @param count the repetition count
      * @return the new string
      * @throws IllegalArgumentException if either {@code str} is null or {@code count} is negative
