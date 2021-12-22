@@ -964,6 +964,13 @@
         <version>0.8.1</version>
         <scope>test</scope>
       </dependency>
+      <!-- Testing Architecture with https://www.archunit.org -->
+      <dependency>
+        <groupId>com.tngtech.archunit</groupId>
+        <artifactId>archunit</artifactId>
+        <version>0.22.0</version>
+        <scope>test</scope>
+      </dependency>
     </dependencies>
   </dependencyManagement>
   <build>
