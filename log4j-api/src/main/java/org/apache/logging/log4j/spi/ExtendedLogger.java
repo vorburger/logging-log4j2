@@ -38,7 +38,9 @@ public interface ExtendedLogger extends Logger {
      * @param t A Throwable.
      * @return True if logging is enabled, false otherwise.
      */
-    boolean isEnabled(Level level, Marker marker, Message message, Throwable t);
+    default boolean isEnabled(Level level, Marker marker, Message message, Throwable t) {
+        return getLevel().intLevel() >= level.intLevel();
+    }
 
     /**
      * Determines if logging is enabled.
@@ -49,7 +51,9 @@ public interface ExtendedLogger extends Logger {
      * @param t A Throwable.
      * @return True if logging is enabled, false otherwise.
      */
-    boolean isEnabled(Level level, Marker marker, CharSequence message, Throwable t);
+    default boolean isEnabled(Level level, Marker marker, CharSequence message, Throwable t) {
+        return getLevel().intLevel() >= level.intLevel();
+    }
 
     /**
      * Determines if logging is enabled.
@@ -60,7 +64,9 @@ public interface ExtendedLogger extends Logger {
      * @param t A Throwable.
      * @return True if logging is enabled, false otherwise.
      */
-    boolean isEnabled(Level level, Marker marker, Object message, Throwable t);
+    default boolean isEnabled(Level level, Marker marker, Object message, Throwable t) {
+        return getLevel().intLevel() >= level.intLevel();
+    }
 
     /**
      * Determines if logging is enabled.
@@ -71,7 +77,9 @@ public interface ExtendedLogger extends Logger {
      * @return True if logging is enabled, false otherwise.
      * @param t the exception to log, including its stack trace.
      */
-    boolean isEnabled(Level level, Marker marker, String message, Throwable t);
+    default boolean isEnabled(Level level, Marker marker, String message, Throwable t) {
+        return getLevel().intLevel() >= level.intLevel();
+    }
 
     /**
      * Determine if logging is enabled.
@@ -81,7 +89,9 @@ public interface ExtendedLogger extends Logger {
      * @param message The message.
      * @return True if logging is enabled, false otherwise.
      */
-    boolean isEnabled(Level level, Marker marker, String message);
+    default boolean isEnabled(Level level, Marker marker, String message)  {
+        return getLevel().intLevel() >= level.intLevel();
+    }
 
     /**
      * Determines if logging is enabled.
@@ -92,7 +102,9 @@ public interface ExtendedLogger extends Logger {
      * @param params The parameters.
      * @return True if logging is enabled, false otherwise.
      */
-    boolean isEnabled(Level level, Marker marker, String message, Object... params);
+    default boolean isEnabled(Level level, Marker marker, String message, Object... params) {
+        return getLevel().intLevel() >= level.intLevel();
+    }
 
     /**
      * Determines if logging is enabled.
@@ -103,7 +115,9 @@ public interface ExtendedLogger extends Logger {
      * @param p0 the message parameters
      * @return True if logging is enabled, false otherwise.
      */
-    boolean isEnabled(Level level, Marker marker, String message, Object p0);
+    default boolean isEnabled(Level level, Marker marker, String message, Object p0){
+        return getLevel().intLevel() >= level.intLevel();
+    }
 
     /**
      * Determines if logging is enabled.
@@ -115,7 +129,9 @@ public interface ExtendedLogger extends Logger {
      * @param p1 the message parameters
      * @return True if logging is enabled, false otherwise.
      */
-    boolean isEnabled(Level level, Marker marker, String message, Object p0, Object p1);
+    default boolean isEnabled(Level level, Marker marker, String message, Object p0, Object p1) {
+        return getLevel().intLevel() >= level.intLevel();
+    }
 
     /**
      * Determines if logging is enabled.
@@ -128,7 +144,9 @@ public interface ExtendedLogger extends Logger {
      * @param p2 the message parameters
      * @return True if logging is enabled, false otherwise.
      */
-    boolean isEnabled(Level level, Marker marker, String message, Object p0, Object p1, Object p2);
+    default boolean isEnabled(Level level, Marker marker, String message, Object p0, Object p1, Object p2) {
+        return getLevel().intLevel() >= level.intLevel();
+    }
 
     /**
      * Determines if logging is enabled.
@@ -142,7 +160,9 @@ public interface ExtendedLogger extends Logger {
      * @param p3 the message parameters
      * @return True if logging is enabled, false otherwise.
      */
-    boolean isEnabled(Level level, Marker marker, String message, Object p0, Object p1, Object p2, Object p3);
+    default boolean isEnabled(Level level, Marker marker, String message, Object p0, Object p1, Object p2, Object p3) {
+        return getLevel().intLevel() >= level.intLevel();
+    }
 
     /**
      * Determines if logging is enabled.
@@ -157,8 +177,10 @@ public interface ExtendedLogger extends Logger {
      * @param p4 the message parameters
      * @return True if logging is enabled, false otherwise.
      */
-    boolean isEnabled(Level level, Marker marker, String message, Object p0, Object p1, Object p2, Object p3,
-            Object p4);
+    default boolean isEnabled(Level level, Marker marker, String message, Object p0, Object p1, Object p2, Object p3,
+            Object p4) {
+        return getLevel().intLevel() >= level.intLevel();
+    }
 
     /**
      * Determines if logging is enabled.
@@ -174,8 +196,10 @@ public interface ExtendedLogger extends Logger {
      * @param p5 the message parameters
      * @return True if logging is enabled, false otherwise.
      */
-    boolean isEnabled(Level level, Marker marker, String message, Object p0, Object p1, Object p2, Object p3,
-            Object p4, Object p5);
+    default boolean isEnabled(Level level, Marker marker, String message, Object p0, Object p1, Object p2, Object p3,
+            Object p4, Object p5) {
+        return getLevel().intLevel() >= level.intLevel();
+    }
 
     /**
      * Determines if logging is enabled.
@@ -192,8 +216,10 @@ public interface ExtendedLogger extends Logger {
      * @param p6 the message parameters
      * @return True if logging is enabled, false otherwise.
      */
-    boolean isEnabled(Level level, Marker marker, String message, Object p0, Object p1, Object p2, Object p3,
-            Object p4, Object p5, Object p6);
+    default boolean isEnabled(Level level, Marker marker, String message, Object p0, Object p1, Object p2, Object p3,
+            Object p4, Object p5, Object p6) {
+        return getLevel().intLevel() >= level.intLevel();
+    }
 
     /**
      * Determines if logging is enabled.
@@ -211,8 +237,10 @@ public interface ExtendedLogger extends Logger {
      * @param p7 the message parameters
      * @return True if logging is enabled, false otherwise.
      */
-    boolean isEnabled(Level level, Marker marker, String message, Object p0, Object p1, Object p2, Object p3,
-            Object p4, Object p5, Object p6, Object p7);
+    default boolean isEnabled(Level level, Marker marker, String message, Object p0, Object p1, Object p2, Object p3,
+            Object p4, Object p5, Object p6, Object p7) {
+        return getLevel().intLevel() >= level.intLevel();
+    }
 
     /**
      * Determines if logging is enabled.
@@ -231,8 +259,10 @@ public interface ExtendedLogger extends Logger {
      * @param p8 the message parameters
      * @return True if logging is enabled, false otherwise.
      */
-    boolean isEnabled(Level level, Marker marker, String message, Object p0, Object p1, Object p2, Object p3,
-            Object p4, Object p5, Object p6, Object p7, Object p8);
+    default boolean isEnabled(Level level, Marker marker, String message, Object p0, Object p1, Object p2, Object p3,
+            Object p4, Object p5, Object p6, Object p7, Object p8) {
+        return getLevel().intLevel() >= level.intLevel();
+    }
 
     /**
      * Determines if logging is enabled.
@@ -252,8 +282,10 @@ public interface ExtendedLogger extends Logger {
      * @param p9 the message parameters
      * @return True if logging is enabled, false otherwise.
      */
-    boolean isEnabled(Level level, Marker marker, String message, Object p0, Object p1, Object p2, Object p3,
-            Object p4, Object p5, Object p6, Object p7, Object p8, Object p9);
+    default boolean isEnabled(Level level, Marker marker, String message, Object p0, Object p1, Object p2, Object p3,
+            Object p4, Object p5, Object p6, Object p7, Object p8, Object p9) {
+        return getLevel().intLevel() >= level.intLevel();
+    }
 
     /**
      * Logs a message if the specified level is active.
